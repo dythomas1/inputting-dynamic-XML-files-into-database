@@ -1,0 +1,2441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UAAthleticsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Defense">
+          <Key>
+            <PropertyRef Name="defense_Id" />
+          </Key>
+          <Property Name="defense_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tackUA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="tackA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="tflUA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="tflA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="tflYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="sacks" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="sackYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="brup" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="blkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="qbh" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="ints" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="intYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="ff" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fr" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="frYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fg">
+          <Key>
+            <PropertyRef Name="fg_Id" />
+          </Key>
+          <Property Name="fg_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="made" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="att" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="blkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fumbles">
+          <Key>
+            <PropertyRef Name="fumbles_Id" />
+          </Key>
+          <Property Name="fumbles_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="nvarchar" MaxLength="50" />
+          <Property Name="lost" Type="nvarchar" MaxLength="50" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="game_Id" />
+          </Key>
+          <Property Name="game_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="visId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="homeId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="visName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="homeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location_" Type="nvarchar" MaxLength="50" />
+          <Property Name="stadium" Type="nvarchar" MaxLength="50" />
+          <Property Name="leagueGame" Type="nvarchar" MaxLength="50" />
+          <Property Name="niteGame" Type="nvarchar" MaxLength="50" />
+          <Property Name="postseasonGame" Type="nvarchar" MaxLength="50" />
+          <Property Name="neutralGame" Type="nvarchar" MaxLength="50" />
+          <Property Name="duration" Type="nvarchar" MaxLength="50" />
+          <Property Name="startTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="endTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="attendance" Type="nvarchar" MaxLength="50" />
+          <Property Name="temp" Type="nvarchar" MaxLength="50" />
+          <Property Name="wind" Type="nvarchar" MaxLength="50" />
+          <Property Name="weather" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ir">
+          <Key>
+            <PropertyRef Name="ir_Id" />
+          </Key>
+          <Property Name="ir_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ko">
+          <Key>
+            <PropertyRef Name="ko_Id" />
+          </Key>
+          <Property Name="ko_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="ob" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="tb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Kr">
+          <Key>
+            <PropertyRef Name="kr_Id" />
+          </Key>
+          <Property Name="kr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="yds_" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lineprd">
+          <Key>
+            <PropertyRef Name="lineprd_Id" />
+          </Key>
+          <Property Name="lineprd_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prd" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="score" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="linescore_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Linescore">
+          <Key>
+            <PropertyRef Name="linescore_Id" />
+          </Key>
+          <Property Name="linescore_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prds" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="line" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="score" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="teamGame_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LongPlay">
+          <Key>
+            <PropertyRef Name="longplay_Id" />
+          </Key>
+          <Property Name="longplay_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="thresh" Type="nvarchar" MaxLength="50" />
+          <Property Name="vh" Type="nvarchar" MaxLength="50" />
+          <Property Name="team" Type="nvarchar" MaxLength="50" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="play" Type="nvarchar" MaxLength="50" />
+          <Property Name="players" Type="nvarchar" MaxLength="50" />
+          <Property Name="td" Type="nvarchar" MaxLength="50" />
+          <Property Name="Game_Id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Official">
+          <Key>
+            <PropertyRef Name="official_Id" />
+          </Key>
+          <Property Name="official_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="game_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pass">
+          <Key>
+            <PropertyRef Name="pass_Id" />
+          </Key>
+          <Property Name="pass_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="comp" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="att" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="int_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="sacks" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="sackYds" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pat">
+          <Key>
+            <PropertyRef Name="pat_Id" />
+          </Key>
+          <Property Name="pat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kickAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="kickMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="player_Id" />
+          </Key>
+          <Property Name="player_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="highSchool" Type="nvarchar" MaxLength="50" />
+          <Property Name="homeTown" Type="nvarchar" MaxLength="50" />
+          <Property Name="height" Type="nvarchar" MaxLength="50" />
+          <Property Name="weight_" Type="nvarchar" MaxLength="50" />
+          <Property Name="firstGame" Type="date" />
+          <Property Name="lastGame" Type="date" />
+        </EntityType>
+        <EntityType Name="PlayerGame">
+          <Key>
+            <PropertyRef Name="playerGame_Id" />
+          </Key>
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="game_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="player_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="uni" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="class" Type="nvarchar" MaxLength="50" />
+          <Property Name="gp" Type="nvarchar" MaxLength="50" />
+          <Property Name="gs" Type="nvarchar" MaxLength="50" />
+          <Property Name="oPos" Type="nvarchar" MaxLength="50" />
+          <Property Name="dPos" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Pr">
+          <Key>
+            <PropertyRef Name="pr_Id" />
+          </Key>
+          <Property Name="pr_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Punt">
+          <Key>
+            <PropertyRef Name="punt_Id" />
+          </Key>
+          <Property Name="punt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="blkd_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="tb" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="fc" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="plus50" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="inside20" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QtrSummary">
+          <Key>
+            <PropertyRef Name="qtrSummary_Id" />
+          </Key>
+          <Property Name="qtrSummary_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="qtrNo" Type="int" />
+          <Property Name="vh" Type="nvarchar" MaxLength="50" />
+          <Property Name="team" Type="nvarchar" MaxLength="50" />
+          <Property Name="firstDownNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownRush" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPass" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPen" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="thirdConv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="thirdAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fourthConv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fourthAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fumblesNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fumblesLost" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="miscYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="timeOfPoss" Type="nvarchar" MaxLength="50" />
+          <Property Name="onsideAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="onsideMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="pointsOffTurnovers" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushGain" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushLoss" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passComp" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passInt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passSacks" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passSackYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntBlkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntTb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntFc" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntPlus50" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntInside20" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koOb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koTb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgBlkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patKickAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patKickMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patPassAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patPassMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patRushAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patRushMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTackUA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTackA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTflUA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTflA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTflYards" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defSacks" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defSackYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defBrup" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defQbh" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defInts" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defIntYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defFf" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defFr" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defFrYards" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defBlkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringTD" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringFG" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatKick" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRush" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRcv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringSaf" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="teamGame_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rcv">
+          <Key>
+            <PropertyRef Name="rcv_Id" />
+          </Key>
+          <Property Name="rcv_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="no_" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rush">
+          <Key>
+            <PropertyRef Name="rush_Id" />
+          </Key>
+          <Property Name="rush_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="att" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="gain" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="loss" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long" Type="decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scores">
+          <Key>
+            <PropertyRef Name="scores_Id" />
+          </Key>
+          <Property Name="scores_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vh" Type="nvarchar" MaxLength="50" />
+          <Property Name="team" Type="nvarchar" MaxLength="50" />
+          <Property Name="qtr" Type="nvarchar" MaxLength="50" />
+          <Property Name="clock" Type="nvarchar" MaxLength="50" />
+          <Property Name="type_" Type="nvarchar" MaxLength="50" />
+          <Property Name="how" Type="nvarchar" MaxLength="50" />
+          <Property Name="yds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scorer" Type="nvarchar" MaxLength="50" />
+          <Property Name="passer" Type="nvarchar" MaxLength="50" />
+          <Property Name="patBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="patType" Type="nvarchar" MaxLength="50" />
+          <Property Name="patRes" Type="nvarchar" MaxLength="50" />
+          <Property Name="plays" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="drive" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="top_" Type="nvarchar" MaxLength="50" />
+          <Property Name="vScore" Type="nvarchar" MaxLength="50" />
+          <Property Name="hScore" Type="nvarchar" MaxLength="50" />
+          <Property Name="driveIndex" Type="nvarchar" MaxLength="50" />
+          <Property Name="game_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scoring">
+          <Key>
+            <PropertyRef Name="scoring_Id" />
+          </Key>
+          <Property Name="scoring_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="td" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fg" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="kick" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rush" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="saf" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="team_Id" />
+          </Key>
+          <Property Name="team_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="abbreviation" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TeamGame">
+          <Key>
+            <PropertyRef Name="teamGame_Id" />
+          </Key>
+          <Property Name="teamGame_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teamName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="vh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="code" Type="nvarchar" MaxLength="50" />
+          <Property Name="record" Type="nvarchar" MaxLength="50" />
+          <Property Name="confRecord" Type="nvarchar" MaxLength="50" />
+          <Property Name="abb" Type="nvarchar" MaxLength="50" />
+          <Property Name="rank_" Type="nvarchar" MaxLength="50" />
+          <Property Name="totOffPlays" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="totOffYards" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="totOffAvg" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownRush" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPass" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPen" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="thirdConv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="thirdAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fourthConv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fourthAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fumbles" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fumblesLost" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="miscYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="timeOfPoss" Type="nvarchar" MaxLength="50" />
+          <Property Name="onsideAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="onsideMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="pointsOffTurnovers" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzScores" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzPoints" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzTdRush" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzTdPass" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzFgMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndFga" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndDowns" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndInt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndFumb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndHalf" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndGame" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushGain" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushLoss" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rushLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passComp" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passInt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passSacks" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="passSackYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="rcvLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntBlkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntTb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntFc" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntPlus50" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="puntInside20" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koOb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="koTb" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgBlkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="fgMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patKickAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patKickMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patPassAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patPassMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patRushAtt" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="patRushMade" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="krLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="prLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irTd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irNo" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="irLong" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTackUA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTackA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTflUA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTflA" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defTflYards" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defSacks" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defSackYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defBrup" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defQbh" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defInts" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defIntYds" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defFF" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defFR" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defFRYards" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="defBlkd" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringTD" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringFG" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatKick" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRush" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRcv" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="scoringSaf" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="team_Id" Type="int" Nullable="false" />
+          <Property Name="game_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Defense__playerG__48CFD27E">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Defense" Type="Self.Defense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Defense">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Fg__playerGame_I__37A5467C">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Fg" Type="Self.Fg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Fg">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Fumbles__playerG__267ABA7A">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Fumbles" Type="Self.Fumbles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Fumbles">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ir__playerGame_I__4316F928">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Ir" Type="Self.Ir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Ir">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ko__playerGame_I__34C8D9D1">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Ko" Type="Self.Ko" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Ko">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Kr__playerGame_I__3D5E1FD2">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Kr" Type="Self.Kr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Kr">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lineprd__linesco__239E4DCF">
+          <End Role="Linescore" Type="Self.Linescore" Multiplicity="1" />
+          <End Role="Lineprd" Type="Self.Lineprd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Linescore">
+              <PropertyRef Name="linescore_Id" />
+            </Principal>
+            <Dependent Role="Lineprd">
+              <PropertyRef Name="linescore_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Linescore__teamG__20C1E124">
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="1" />
+          <End Role="Linescore" Type="Self.Linescore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamGame">
+              <PropertyRef Name="teamGame_Id" />
+            </Principal>
+            <Dependent Role="Linescore">
+              <PropertyRef Name="teamGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LongPlay__Game_I__5165187F">
+          <End Role="Game" Type="Self.Game" Multiplicity="0..1" />
+          <End Role="LongPlay" Type="Self.LongPlay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="LongPlay">
+              <PropertyRef Name="Game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Official__game_I__1273C1CD">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Official" Type="Self.Official" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="Official">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pass__playerGame__2C3393D0">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Pass" Type="Self.Pass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Pass">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pat__playerGame___3A81B327">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Pat" Type="Self.Pat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Pat">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerGam__game___173876EA">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="PlayerGame">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerGam__playe__182C9B23">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="player_Id" />
+            </Principal>
+            <Dependent Role="PlayerGame">
+              <PropertyRef Name="player_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pr__playerGame_I__403A8C7D">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Pr" Type="Self.Pr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Pr">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Punt__playerGame__31EC6D26">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Punt" Type="Self.Punt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Punt">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__QtrSummar__teamG__4E88ABD4">
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="1" />
+          <End Role="QtrSummary" Type="Self.QtrSummary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamGame">
+              <PropertyRef Name="teamGame_Id" />
+            </Principal>
+            <Dependent Role="QtrSummary">
+              <PropertyRef Name="teamGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rcv__playerGame___2F10007B">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Rcv" Type="Self.Rcv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Rcv">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rush__playerGame__29572725">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Rush" Type="Self.Rush" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Rush">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Scores__game_Id__4BAC3F29">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Scores" Type="Self.Scores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="Scores">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Scoring__playerG__45F365D3">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Scoring" Type="Self.Scoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Scoring">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeamGame__game_I__1DE57479">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="TeamGame">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeamGame__team_I__1CF15040">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="team_Id" />
+            </Principal>
+            <Dependent Role="TeamGame">
+              <PropertyRef Name="team_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UAAthleticsModelStoreContainer">
+          <EntitySet Name="Defense" EntityType="Self.Defense" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fg" EntityType="Self.Fg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fumbles" EntityType="Self.Fumbles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ir" EntityType="Self.Ir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ko" EntityType="Self.Ko" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kr" EntityType="Self.Kr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lineprd" EntityType="Self.Lineprd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Linescore" EntityType="Self.Linescore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LongPlay" EntityType="Self.LongPlay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Official" EntityType="Self.Official" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pass" EntityType="Self.Pass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pat" EntityType="Self.Pat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayerGame" EntityType="Self.PlayerGame" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pr" EntityType="Self.Pr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Punt" EntityType="Self.Punt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QtrSummary" EntityType="Self.QtrSummary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rcv" EntityType="Self.Rcv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rush" EntityType="Self.Rush" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scores" EntityType="Self.Scores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scoring" EntityType="Self.Scoring" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeamGame" EntityType="Self.TeamGame" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Defense__playerG__48CFD27E" Association="Self.FK__Defense__playerG__48CFD27E">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Defense" EntitySet="Defense" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Fg__playerGame_I__37A5467C" Association="Self.FK__Fg__playerGame_I__37A5467C">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Fg" EntitySet="Fg" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Fumbles__playerG__267ABA7A" Association="Self.FK__Fumbles__playerG__267ABA7A">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Fumbles" EntitySet="Fumbles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ir__playerGame_I__4316F928" Association="Self.FK__Ir__playerGame_I__4316F928">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Ir" EntitySet="Ir" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ko__playerGame_I__34C8D9D1" Association="Self.FK__Ko__playerGame_I__34C8D9D1">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Ko" EntitySet="Ko" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Kr__playerGame_I__3D5E1FD2" Association="Self.FK__Kr__playerGame_I__3D5E1FD2">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Kr" EntitySet="Kr" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lineprd__linesco__239E4DCF" Association="Self.FK__Lineprd__linesco__239E4DCF">
+            <End Role="Linescore" EntitySet="Linescore" />
+            <End Role="Lineprd" EntitySet="Lineprd" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Linescore__teamG__20C1E124" Association="Self.FK__Linescore__teamG__20C1E124">
+            <End Role="TeamGame" EntitySet="TeamGame" />
+            <End Role="Linescore" EntitySet="Linescore" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LongPlay__Game_I__5165187F" Association="Self.FK__LongPlay__Game_I__5165187F">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="LongPlay" EntitySet="LongPlay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Official__game_I__1273C1CD" Association="Self.FK__Official__game_I__1273C1CD">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="Official" EntitySet="Official" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pass__playerGame__2C3393D0" Association="Self.FK__Pass__playerGame__2C3393D0">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Pass" EntitySet="Pass" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pat__playerGame___3A81B327" Association="Self.FK__Pat__playerGame___3A81B327">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Pat" EntitySet="Pat" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerGam__game___173876EA" Association="Self.FK__PlayerGam__game___173876EA">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerGam__playe__182C9B23" Association="Self.FK__PlayerGam__playe__182C9B23">
+            <End Role="Player" EntitySet="Player" />
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pr__playerGame_I__403A8C7D" Association="Self.FK__Pr__playerGame_I__403A8C7D">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Pr" EntitySet="Pr" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Punt__playerGame__31EC6D26" Association="Self.FK__Punt__playerGame__31EC6D26">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Punt" EntitySet="Punt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__QtrSummar__teamG__4E88ABD4" Association="Self.FK__QtrSummar__teamG__4E88ABD4">
+            <End Role="TeamGame" EntitySet="TeamGame" />
+            <End Role="QtrSummary" EntitySet="QtrSummary" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rcv__playerGame___2F10007B" Association="Self.FK__Rcv__playerGame___2F10007B">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Rcv" EntitySet="Rcv" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rush__playerGame__29572725" Association="Self.FK__Rush__playerGame__29572725">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Rush" EntitySet="Rush" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Scores__game_Id__4BAC3F29" Association="Self.FK__Scores__game_Id__4BAC3F29">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="Scores" EntitySet="Scores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Scoring__playerG__45F365D3" Association="Self.FK__Scoring__playerG__45F365D3">
+            <End Role="PlayerGame" EntitySet="PlayerGame" />
+            <End Role="Scoring" EntitySet="Scoring" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeamGame__game_I__1DE57479" Association="Self.FK__TeamGame__game_I__1DE57479">
+            <End Role="Game" EntitySet="Game" />
+            <End Role="TeamGame" EntitySet="TeamGame" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeamGame__team_I__1CF15040" Association="Self.FK__TeamGame__team_I__1CF15040">
+            <End Role="Team" EntitySet="Team" />
+            <End Role="TeamGame" EntitySet="TeamGame" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UAAthleticsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Defense">
+          <Key>
+            <PropertyRef Name="defense_Id" />
+          </Key>
+          <Property Name="defense_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tackUA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="tackA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="tflUA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="tflA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="sacks" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="sackYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="brup" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="qbh" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="ints" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="intYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="ff" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fr" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Defense__playerG__48CFD27E" FromRole="Defense" ToRole="PlayerGame" />
+          <Property Name="tflYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="blkd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="frYds" Type="Decimal" Precision="6" Scale="2" />
+        </EntityType>
+        <EntityType Name="Fg">
+          <Key>
+            <PropertyRef Name="fg_Id" />
+          </Key>
+          <Property Name="fg_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="made" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="att" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="blkd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Fg__playerGame_I__37A5467C" FromRole="Fg" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Fumble">
+          <Key>
+            <PropertyRef Name="fumbles_Id" />
+          </Key>
+          <Property Name="fumbles_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Fumbles__playerG__267ABA7A" FromRole="Fumbles" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="game_Id" />
+          </Key>
+          <Property Name="game_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="homeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="visName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="homeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="location_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stadium" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="leagueGame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="niteGame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="postseasonGame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="neutralGame" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="duration" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="startTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="endTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="attendance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="temp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="wind" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="weather" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LongPlays" Relationship="Self.FK__LongPlay__Game_I__5165187F" FromRole="Game" ToRole="LongPlay" />
+          <NavigationProperty Name="Officials" Relationship="Self.FK__Official__game_I__1273C1CD" FromRole="Game" ToRole="Official" />
+          <NavigationProperty Name="PlayerGames" Relationship="Self.FK__PlayerGam__game___173876EA" FromRole="Game" ToRole="PlayerGame" />
+          <NavigationProperty Name="Scores" Relationship="Self.FK__Scores__game_Id__4BAC3F29" FromRole="Game" ToRole="Scores" />
+          <NavigationProperty Name="TeamGames" Relationship="Self.FK__TeamGame__game_I__1DE57479" FromRole="Game" ToRole="TeamGame" />
+        </EntityType>
+        <EntityType Name="Ir">
+          <Key>
+            <PropertyRef Name="ir_Id" />
+          </Key>
+          <Property Name="ir_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Ir__playerGame_I__4316F928" FromRole="Ir" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Ko">
+          <Key>
+            <PropertyRef Name="ko_Id" />
+          </Key>
+          <Property Name="ko_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="ob" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="tb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Ko__playerGame_I__34C8D9D1" FromRole="Ko" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Kr">
+          <Key>
+            <PropertyRef Name="kr_Id" />
+          </Key>
+          <Property Name="kr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="yds_" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Kr__playerGame_I__3D5E1FD2" FromRole="Kr" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Lineprd">
+          <Key>
+            <PropertyRef Name="lineprd_Id" />
+          </Key>
+          <Property Name="lineprd_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prd" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="score" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="linescore_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Linescore" Relationship="Self.FK__Lineprd__linesco__239E4DCF" FromRole="Lineprd" ToRole="Linescore" />
+        </EntityType>
+        <EntityType Name="Linescore">
+          <Key>
+            <PropertyRef Name="linescore_Id" />
+          </Key>
+          <Property Name="linescore_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prds" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="line" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="score" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="teamGame_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lineprds" Relationship="Self.FK__Lineprd__linesco__239E4DCF" FromRole="Linescore" ToRole="Lineprd" />
+          <NavigationProperty Name="TeamGame" Relationship="Self.FK__Linescore__teamG__20C1E124" FromRole="Linescore" ToRole="TeamGame" />
+        </EntityType>
+        <EntityType Name="LongPlay">
+          <Key>
+            <PropertyRef Name="longplay_Id" />
+          </Key>
+          <Property Name="longplay_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="thresh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="play" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="players" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="td" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Game_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__LongPlay__Game_I__5165187F" FromRole="LongPlay" ToRole="Game" />
+        </EntityType>
+        <EntityType Name="Official">
+          <Key>
+            <PropertyRef Name="official_Id" />
+          </Key>
+          <Property Name="official_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="game_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__Official__game_I__1273C1CD" FromRole="Official" ToRole="Game" />
+        </EntityType>
+        <EntityType Name="Pass">
+          <Key>
+            <PropertyRef Name="pass_Id" />
+          </Key>
+          <Property Name="pass_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="comp" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="att" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="int_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="sacks" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="sackYds" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Pass__playerGame__2C3393D0" FromRole="Pass" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Pat">
+          <Key>
+            <PropertyRef Name="pat_Id" />
+          </Key>
+          <Property Name="pat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kickAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="kickMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Pat__playerGame___3A81B327" FromRole="Pat" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="player_Id" />
+          </Key>
+          <Property Name="player_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="highSchool" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="homeTown" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="height" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="weight_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PlayerGames" Relationship="Self.FK__PlayerGam__playe__182C9B23" FromRole="Player" ToRole="PlayerGame" />
+          <Property Name="firstGame" Type="DateTime" Precision="0" />
+          <Property Name="lastGame" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="PlayerGame">
+          <Key>
+            <PropertyRef Name="playerGame_Id" />
+          </Key>
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="game_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="player_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="uni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="oPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dPos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Defenses" Relationship="Self.FK__Defense__playerG__48CFD27E" FromRole="PlayerGame" ToRole="Defense" />
+          <NavigationProperty Name="Fgs" Relationship="Self.FK__Fg__playerGame_I__37A5467C" FromRole="PlayerGame" ToRole="Fg" />
+          <NavigationProperty Name="Fumbles" Relationship="Self.FK__Fumbles__playerG__267ABA7A" FromRole="PlayerGame" ToRole="Fumbles" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__PlayerGam__game___173876EA" FromRole="PlayerGame" ToRole="Game" />
+          <NavigationProperty Name="Irs" Relationship="Self.FK__Ir__playerGame_I__4316F928" FromRole="PlayerGame" ToRole="Ir" />
+          <NavigationProperty Name="Koes" Relationship="Self.FK__Ko__playerGame_I__34C8D9D1" FromRole="PlayerGame" ToRole="Ko" />
+          <NavigationProperty Name="Krs" Relationship="Self.FK__Kr__playerGame_I__3D5E1FD2" FromRole="PlayerGame" ToRole="Kr" />
+          <NavigationProperty Name="Passes" Relationship="Self.FK__Pass__playerGame__2C3393D0" FromRole="PlayerGame" ToRole="Pass" />
+          <NavigationProperty Name="Pats" Relationship="Self.FK__Pat__playerGame___3A81B327" FromRole="PlayerGame" ToRole="Pat" />
+          <NavigationProperty Name="Player" Relationship="Self.FK__PlayerGam__playe__182C9B23" FromRole="PlayerGame" ToRole="Player" />
+          <NavigationProperty Name="Prs" Relationship="Self.FK__Pr__playerGame_I__403A8C7D" FromRole="PlayerGame" ToRole="Pr" />
+          <NavigationProperty Name="Punts" Relationship="Self.FK__Punt__playerGame__31EC6D26" FromRole="PlayerGame" ToRole="Punt" />
+          <NavigationProperty Name="Rcvs" Relationship="Self.FK__Rcv__playerGame___2F10007B" FromRole="PlayerGame" ToRole="Rcv" />
+          <NavigationProperty Name="Rushes" Relationship="Self.FK__Rush__playerGame__29572725" FromRole="PlayerGame" ToRole="Rush" />
+          <NavigationProperty Name="Scorings" Relationship="Self.FK__Scoring__playerG__45F365D3" FromRole="PlayerGame" ToRole="Scoring" />
+        </EntityType>
+        <EntityType Name="Pr">
+          <Key>
+            <PropertyRef Name="pr_Id" />
+          </Key>
+          <Property Name="pr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Pr__playerGame_I__403A8C7D" FromRole="Pr" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Punt">
+          <Key>
+            <PropertyRef Name="punt_Id" />
+          </Key>
+          <Property Name="punt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="blkd_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="tb" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="fc" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="plus50" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="inside20" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Punt__playerGame__31EC6D26" FromRole="Punt" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="QtrSummary">
+          <Key>
+            <PropertyRef Name="qtrSummary_Id" />
+          </Key>
+          <Property Name="qtrSummary_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="qtrNo" Type="Int32" />
+          <Property Name="vh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstDownNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownRush" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPass" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPen" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="thirdConv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="thirdAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fourthConv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fourthAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fumblesNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fumblesLost" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="miscYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="timeOfPoss" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="onsideAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="onsideMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="pointsOffTurnovers" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushGain" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushLoss" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passComp" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passInt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passSacks" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passSackYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntBlkd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntTb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntFc" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntPlus50" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntInside20" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koOb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koTb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgBlkd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patKickAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patKickMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patPassAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patPassMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patRushAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patRushMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTackUA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTackA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTflUA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTflA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTflYards" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defSacks" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defSackYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defBrup" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defQbh" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defInts" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defIntYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defFf" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defFr" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defFrYards" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringTD" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringFG" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatKick" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRush" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRcv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringSaf" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="teamGame_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TeamGame" Relationship="Self.FK__QtrSummar__teamG__4E88ABD4" FromRole="QtrSummary" ToRole="TeamGame" />
+          <Property Name="defBlkd" Type="Decimal" Precision="6" Scale="2" />
+        </EntityType>
+        <EntityType Name="Rcv">
+          <Key>
+            <PropertyRef Name="rcv_Id" />
+          </Key>
+          <Property Name="rcv_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="no_" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Rcv__playerGame___2F10007B" FromRole="Rcv" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Rush">
+          <Key>
+            <PropertyRef Name="rush_Id" />
+          </Key>
+          <Property Name="rush_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="att" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="gain" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="loss" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="long" Type="Decimal" Precision="6" Scale="2" Nullable="false" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Rush__playerGame__29572725" FromRole="Rush" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="scores_Id" />
+          </Key>
+          <Property Name="scores_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qtr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="clock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="how" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="yds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scorer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="passer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="patBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="patType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="patRes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="plays" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="drive" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="top_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vScore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hScore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="driveIndex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="game_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__Scores__game_Id__4BAC3F29" FromRole="Scores" ToRole="Game" />
+        </EntityType>
+        <EntityType Name="Scoring">
+          <Key>
+            <PropertyRef Name="scoring_Id" />
+          </Key>
+          <Property Name="scoring_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="td" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fg" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="kick" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rush" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="saf" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="playerGame_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PlayerGame" Relationship="Self.FK__Scoring__playerG__45F365D3" FromRole="Scoring" ToRole="PlayerGame" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="team_Id" />
+          </Key>
+          <Property Name="team_Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TeamGames" Relationship="Self.FK__TeamGame__team_I__1CF15040" FromRole="Team" ToRole="TeamGame" />
+          <Property Name="abbreviation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TeamGame">
+          <Key>
+            <PropertyRef Name="teamGame_Id" />
+          </Key>
+          <Property Name="teamGame_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="vh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="record" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="confRecord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="abb" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rank_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="totOffPlays" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="totOffYards" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="totOffAvg" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownRush" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPass" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="firstDownPen" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="penaltyYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="thirdConv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="thirdAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fourthConv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fourthAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fumbles" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fumblesLost" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="miscYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="timeOfPoss" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="onsideAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="onsideMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="pointsOffTurnovers" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzScores" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzPoints" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzTdRush" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzTdPass" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzFgMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndFga" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndDowns" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndInt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndFumb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndHalf" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rzEndGame" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushGain" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushLoss" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rushLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passComp" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passInt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passSacks" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="passSackYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="rcvLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntBlkd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntTb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntFc" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntPlus50" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="puntInside20" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koOb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="koTb" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgBlkd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="fgMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patKickAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patKickMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patPassAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patPassMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patRushAtt" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="patRushMade" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="krLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="prLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irTd" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irNo" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="irLong" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTackUA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTackA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTflUA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTflA" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defTflYards" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defSacks" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defSackYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defBrup" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defQbh" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defInts" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defIntYds" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defFF" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defFR" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="defFRYards" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringTD" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringFG" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatKick" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRush" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringPatRcv" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="scoringSaf" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="team_Id" Type="Int32" Nullable="false" />
+          <Property Name="game_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__TeamGame__game_I__1DE57479" FromRole="TeamGame" ToRole="Game" />
+          <NavigationProperty Name="Linescores" Relationship="Self.FK__Linescore__teamG__20C1E124" FromRole="TeamGame" ToRole="Linescore" />
+          <NavigationProperty Name="QtrSummaries" Relationship="Self.FK__QtrSummar__teamG__4E88ABD4" FromRole="TeamGame" ToRole="QtrSummary" />
+          <NavigationProperty Name="Team" Relationship="Self.FK__TeamGame__team_I__1CF15040" FromRole="TeamGame" ToRole="Team" />
+          <Property Name="defBlkd" Type="Decimal" Precision="6" Scale="2" />
+        </EntityType>
+        <Association Name="FK__Defense__playerG__48CFD27E">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Defense" Type="Self.Defense" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Defense">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Fg__playerGame_I__37A5467C">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Fg" Type="Self.Fg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Fg">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Fumbles__playerG__267ABA7A">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Fumbles" Type="Self.Fumble" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Fumbles">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LongPlay__Game_I__5165187F">
+          <End Role="Game" Type="Self.Game" Multiplicity="0..1" />
+          <End Role="LongPlay" Type="Self.LongPlay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="LongPlay">
+              <PropertyRef Name="Game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Official__game_I__1273C1CD">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Official" Type="Self.Official" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="Official">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerGam__game___173876EA">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="PlayerGame">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Scores__game_Id__4BAC3F29">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="Scores" Type="Self.Score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="Scores">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeamGame__game_I__1DE57479">
+          <End Role="Game" Type="Self.Game" Multiplicity="1" />
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Game">
+              <PropertyRef Name="game_Id" />
+            </Principal>
+            <Dependent Role="TeamGame">
+              <PropertyRef Name="game_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ir__playerGame_I__4316F928">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Ir" Type="Self.Ir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Ir">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ko__playerGame_I__34C8D9D1">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Ko" Type="Self.Ko" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Ko">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Kr__playerGame_I__3D5E1FD2">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Kr" Type="Self.Kr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Kr">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lineprd__linesco__239E4DCF">
+          <End Role="Linescore" Type="Self.Linescore" Multiplicity="1" />
+          <End Role="Lineprd" Type="Self.Lineprd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Linescore">
+              <PropertyRef Name="linescore_Id" />
+            </Principal>
+            <Dependent Role="Lineprd">
+              <PropertyRef Name="linescore_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Linescore__teamG__20C1E124">
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="1" />
+          <End Role="Linescore" Type="Self.Linescore" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamGame">
+              <PropertyRef Name="teamGame_Id" />
+            </Principal>
+            <Dependent Role="Linescore">
+              <PropertyRef Name="teamGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pass__playerGame__2C3393D0">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Pass" Type="Self.Pass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Pass">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pat__playerGame___3A81B327">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Pat" Type="Self.Pat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Pat">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerGam__playe__182C9B23">
+          <End Role="Player" Type="Self.Player" Multiplicity="1" />
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Player">
+              <PropertyRef Name="player_Id" />
+            </Principal>
+            <Dependent Role="PlayerGame">
+              <PropertyRef Name="player_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pr__playerGame_I__403A8C7D">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Pr" Type="Self.Pr" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Pr">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Punt__playerGame__31EC6D26">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Punt" Type="Self.Punt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Punt">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rcv__playerGame___2F10007B">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Rcv" Type="Self.Rcv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Rcv">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Rush__playerGame__29572725">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Rush" Type="Self.Rush" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Rush">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Scoring__playerG__45F365D3">
+          <End Role="PlayerGame" Type="Self.PlayerGame" Multiplicity="1" />
+          <End Role="Scoring" Type="Self.Scoring" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlayerGame">
+              <PropertyRef Name="playerGame_Id" />
+            </Principal>
+            <Dependent Role="Scoring">
+              <PropertyRef Name="playerGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__QtrSummar__teamG__4E88ABD4">
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="1" />
+          <End Role="QtrSummary" Type="Self.QtrSummary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TeamGame">
+              <PropertyRef Name="teamGame_Id" />
+            </Principal>
+            <Dependent Role="QtrSummary">
+              <PropertyRef Name="teamGame_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeamGame__team_I__1CF15040">
+          <End Role="Team" Type="Self.Team" Multiplicity="1" />
+          <End Role="TeamGame" Type="Self.TeamGame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Team">
+              <PropertyRef Name="team_Id" />
+            </Principal>
+            <Dependent Role="TeamGame">
+              <PropertyRef Name="team_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UAAthleticsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Defenses" EntityType="Self.Defense" />
+          <EntitySet Name="Fgs" EntityType="Self.Fg" />
+          <EntitySet Name="Fumbles" EntityType="Self.Fumble" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="Irs" EntityType="Self.Ir" />
+          <EntitySet Name="Koes" EntityType="Self.Ko" />
+          <EntitySet Name="Krs" EntityType="Self.Kr" />
+          <EntitySet Name="Lineprds" EntityType="Self.Lineprd" />
+          <EntitySet Name="Linescores" EntityType="Self.Linescore" />
+          <EntitySet Name="LongPlays" EntityType="Self.LongPlay" />
+          <EntitySet Name="Officials" EntityType="Self.Official" />
+          <EntitySet Name="Passes" EntityType="Self.Pass" />
+          <EntitySet Name="Pats" EntityType="Self.Pat" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="PlayerGames" EntityType="Self.PlayerGame" />
+          <EntitySet Name="Prs" EntityType="Self.Pr" />
+          <EntitySet Name="Punts" EntityType="Self.Punt" />
+          <EntitySet Name="QtrSummaries" EntityType="Self.QtrSummary" />
+          <EntitySet Name="Rcvs" EntityType="Self.Rcv" />
+          <EntitySet Name="Rushes" EntityType="Self.Rush" />
+          <EntitySet Name="Scores" EntityType="Self.Score" />
+          <EntitySet Name="Scorings" EntityType="Self.Scoring" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
+          <EntitySet Name="TeamGames" EntityType="Self.TeamGame" />
+          <AssociationSet Name="FK__Defense__playerG__48CFD27E" Association="Self.FK__Defense__playerG__48CFD27E">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Defense" EntitySet="Defenses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Fg__playerGame_I__37A5467C" Association="Self.FK__Fg__playerGame_I__37A5467C">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Fg" EntitySet="Fgs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Fumbles__playerG__267ABA7A" Association="Self.FK__Fumbles__playerG__267ABA7A">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Fumbles" EntitySet="Fumbles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LongPlay__Game_I__5165187F" Association="Self.FK__LongPlay__Game_I__5165187F">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="LongPlay" EntitySet="LongPlays" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Official__game_I__1273C1CD" Association="Self.FK__Official__game_I__1273C1CD">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="Official" EntitySet="Officials" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerGam__game___173876EA" Association="Self.FK__PlayerGam__game___173876EA">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Scores__game_Id__4BAC3F29" Association="Self.FK__Scores__game_Id__4BAC3F29">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="Scores" EntitySet="Scores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeamGame__game_I__1DE57479" Association="Self.FK__TeamGame__game_I__1DE57479">
+            <End Role="Game" EntitySet="Games" />
+            <End Role="TeamGame" EntitySet="TeamGames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ir__playerGame_I__4316F928" Association="Self.FK__Ir__playerGame_I__4316F928">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Ir" EntitySet="Irs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ko__playerGame_I__34C8D9D1" Association="Self.FK__Ko__playerGame_I__34C8D9D1">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Ko" EntitySet="Koes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Kr__playerGame_I__3D5E1FD2" Association="Self.FK__Kr__playerGame_I__3D5E1FD2">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Kr" EntitySet="Krs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lineprd__linesco__239E4DCF" Association="Self.FK__Lineprd__linesco__239E4DCF">
+            <End Role="Linescore" EntitySet="Linescores" />
+            <End Role="Lineprd" EntitySet="Lineprds" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Linescore__teamG__20C1E124" Association="Self.FK__Linescore__teamG__20C1E124">
+            <End Role="TeamGame" EntitySet="TeamGames" />
+            <End Role="Linescore" EntitySet="Linescores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pass__playerGame__2C3393D0" Association="Self.FK__Pass__playerGame__2C3393D0">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Pass" EntitySet="Passes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pat__playerGame___3A81B327" Association="Self.FK__Pat__playerGame___3A81B327">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Pat" EntitySet="Pats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerGam__playe__182C9B23" Association="Self.FK__PlayerGam__playe__182C9B23">
+            <End Role="Player" EntitySet="Players" />
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pr__playerGame_I__403A8C7D" Association="Self.FK__Pr__playerGame_I__403A8C7D">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Pr" EntitySet="Prs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Punt__playerGame__31EC6D26" Association="Self.FK__Punt__playerGame__31EC6D26">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Punt" EntitySet="Punts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rcv__playerGame___2F10007B" Association="Self.FK__Rcv__playerGame___2F10007B">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Rcv" EntitySet="Rcvs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Rush__playerGame__29572725" Association="Self.FK__Rush__playerGame__29572725">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Rush" EntitySet="Rushes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Scoring__playerG__45F365D3" Association="Self.FK__Scoring__playerG__45F365D3">
+            <End Role="PlayerGame" EntitySet="PlayerGames" />
+            <End Role="Scoring" EntitySet="Scorings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__QtrSummar__teamG__4E88ABD4" Association="Self.FK__QtrSummar__teamG__4E88ABD4">
+            <End Role="TeamGame" EntitySet="TeamGames" />
+            <End Role="QtrSummary" EntitySet="QtrSummaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeamGame__team_I__1CF15040" Association="Self.FK__TeamGame__team_I__1CF15040">
+            <End Role="Team" EntitySet="Teams" />
+            <End Role="TeamGame" EntitySet="TeamGames" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UAAthleticsModelStoreContainer" CdmEntityContainer="UAAthleticsEntities">
+          <EntitySetMapping Name="Defenses">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Defense">
+              <MappingFragment StoreEntitySet="Defense">
+                <ScalarProperty Name="frYds" ColumnName="frYds" />
+                <ScalarProperty Name="blkd" ColumnName="blkd" />
+                <ScalarProperty Name="tflYds" ColumnName="tflYds" />
+                <ScalarProperty Name="defense_Id" ColumnName="defense_Id" />
+                <ScalarProperty Name="tackUA" ColumnName="tackUA" />
+                <ScalarProperty Name="tackA" ColumnName="tackA" />
+                <ScalarProperty Name="tflUA" ColumnName="tflUA" />
+                <ScalarProperty Name="tflA" ColumnName="tflA" />
+                <ScalarProperty Name="sacks" ColumnName="sacks" />
+                <ScalarProperty Name="sackYds" ColumnName="sackYds" />
+                <ScalarProperty Name="brup" ColumnName="brup" />
+                <ScalarProperty Name="qbh" ColumnName="qbh" />
+                <ScalarProperty Name="ints" ColumnName="ints" />
+                <ScalarProperty Name="intYds" ColumnName="intYds" />
+                <ScalarProperty Name="ff" ColumnName="ff" />
+                <ScalarProperty Name="fr" ColumnName="fr" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fgs">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Fg">
+              <MappingFragment StoreEntitySet="Fg">
+                <ScalarProperty Name="fg_Id" ColumnName="fg_Id" />
+                <ScalarProperty Name="made" ColumnName="made" />
+                <ScalarProperty Name="att" ColumnName="att" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="blkd" ColumnName="blkd" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fumbles">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Fumble">
+              <MappingFragment StoreEntitySet="Fumbles">
+                <ScalarProperty Name="fumbles_Id" ColumnName="fumbles_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="lost" ColumnName="lost" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="game_Id" ColumnName="game_Id" />
+                <ScalarProperty Name="visId" ColumnName="visId" />
+                <ScalarProperty Name="homeId" ColumnName="homeId" />
+                <ScalarProperty Name="visName" ColumnName="visName" />
+                <ScalarProperty Name="homeName" ColumnName="homeName" />
+                <ScalarProperty Name="date_" ColumnName="date_" />
+                <ScalarProperty Name="location_" ColumnName="location_" />
+                <ScalarProperty Name="stadium" ColumnName="stadium" />
+                <ScalarProperty Name="leagueGame" ColumnName="leagueGame" />
+                <ScalarProperty Name="niteGame" ColumnName="niteGame" />
+                <ScalarProperty Name="postseasonGame" ColumnName="postseasonGame" />
+                <ScalarProperty Name="neutralGame" ColumnName="neutralGame" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="startTime" ColumnName="startTime" />
+                <ScalarProperty Name="endTime" ColumnName="endTime" />
+                <ScalarProperty Name="attendance" ColumnName="attendance" />
+                <ScalarProperty Name="temp" ColumnName="temp" />
+                <ScalarProperty Name="wind" ColumnName="wind" />
+                <ScalarProperty Name="weather" ColumnName="weather" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Irs">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Ir">
+              <MappingFragment StoreEntitySet="Ir">
+                <ScalarProperty Name="ir_Id" ColumnName="ir_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Koes">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Ko">
+              <MappingFragment StoreEntitySet="Ko">
+                <ScalarProperty Name="ko_Id" ColumnName="ko_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="ob" ColumnName="ob" />
+                <ScalarProperty Name="tb" ColumnName="tb" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Krs">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Kr">
+              <MappingFragment StoreEntitySet="Kr">
+                <ScalarProperty Name="kr_Id" ColumnName="kr_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="yds_" ColumnName="yds_" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lineprds">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Lineprd">
+              <MappingFragment StoreEntitySet="Lineprd">
+                <ScalarProperty Name="lineprd_Id" ColumnName="lineprd_Id" />
+                <ScalarProperty Name="prd" ColumnName="prd" />
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="linescore_Id" ColumnName="linescore_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Linescores">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Linescore">
+              <MappingFragment StoreEntitySet="Linescore">
+                <ScalarProperty Name="linescore_Id" ColumnName="linescore_Id" />
+                <ScalarProperty Name="prds" ColumnName="prds" />
+                <ScalarProperty Name="line" ColumnName="line" />
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="teamGame_Id" ColumnName="teamGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LongPlays">
+            <EntityTypeMapping TypeName="UAAthleticsModel.LongPlay">
+              <MappingFragment StoreEntitySet="LongPlay">
+                <ScalarProperty Name="longplay_Id" ColumnName="longplay_Id" />
+                <ScalarProperty Name="thresh" ColumnName="thresh" />
+                <ScalarProperty Name="vh" ColumnName="vh" />
+                <ScalarProperty Name="team" ColumnName="team" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="play" ColumnName="play" />
+                <ScalarProperty Name="players" ColumnName="players" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="Game_Id" ColumnName="Game_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Officials">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Official">
+              <MappingFragment StoreEntitySet="Official">
+                <ScalarProperty Name="official_Id" ColumnName="official_Id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="game_Id" ColumnName="game_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Passes">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Pass">
+              <MappingFragment StoreEntitySet="Pass">
+                <ScalarProperty Name="pass_Id" ColumnName="pass_Id" />
+                <ScalarProperty Name="comp" ColumnName="comp" />
+                <ScalarProperty Name="att" ColumnName="att" />
+                <ScalarProperty Name="int_" ColumnName="int_" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="sacks" ColumnName="sacks" />
+                <ScalarProperty Name="sackYds" ColumnName="sackYds" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pats">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Pat">
+              <MappingFragment StoreEntitySet="Pat">
+                <ScalarProperty Name="pat_Id" ColumnName="pat_Id" />
+                <ScalarProperty Name="kickAtt" ColumnName="kickAtt" />
+                <ScalarProperty Name="kickMade" ColumnName="kickMade" />
+                <ScalarProperty Name="passAtt" ColumnName="passAtt" />
+                <ScalarProperty Name="passMade" ColumnName="passMade" />
+                <ScalarProperty Name="rushAtt" ColumnName="rushAtt" />
+                <ScalarProperty Name="rushMade" ColumnName="rushMade" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Player">
+              <MappingFragment StoreEntitySet="Player">
+                <ScalarProperty Name="lastGame" ColumnName="lastGame" />
+                <ScalarProperty Name="firstGame" ColumnName="firstGame" />
+                <ScalarProperty Name="player_Id" ColumnName="player_Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="highSchool" ColumnName="highSchool" />
+                <ScalarProperty Name="homeTown" ColumnName="homeTown" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="weight_" ColumnName="weight_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayerGames">
+            <EntityTypeMapping TypeName="UAAthleticsModel.PlayerGame">
+              <MappingFragment StoreEntitySet="PlayerGame">
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+                <ScalarProperty Name="game_Id" ColumnName="game_Id" />
+                <ScalarProperty Name="player_Id" ColumnName="player_Id" />
+                <ScalarProperty Name="uni" ColumnName="uni" />
+                <ScalarProperty Name="class" ColumnName="class" />
+                <ScalarProperty Name="gp" ColumnName="gp" />
+                <ScalarProperty Name="gs" ColumnName="gs" />
+                <ScalarProperty Name="oPos" ColumnName="oPos" />
+                <ScalarProperty Name="dPos" ColumnName="dPos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prs">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Pr">
+              <MappingFragment StoreEntitySet="Pr">
+                <ScalarProperty Name="pr_Id" ColumnName="pr_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Punts">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Punt">
+              <MappingFragment StoreEntitySet="Punt">
+                <ScalarProperty Name="punt_Id" ColumnName="punt_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="yds_" ColumnName="yds_" />
+                <ScalarProperty Name="long_" ColumnName="long_" />
+                <ScalarProperty Name="blkd_" ColumnName="blkd_" />
+                <ScalarProperty Name="tb" ColumnName="tb" />
+                <ScalarProperty Name="fc" ColumnName="fc" />
+                <ScalarProperty Name="plus50" ColumnName="plus50" />
+                <ScalarProperty Name="inside20" ColumnName="inside20" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QtrSummaries">
+            <EntityTypeMapping TypeName="UAAthleticsModel.QtrSummary">
+              <MappingFragment StoreEntitySet="QtrSummary">
+                <ScalarProperty Name="defBlkd" ColumnName="defBlkd" />
+                <ScalarProperty Name="qtrSummary_Id" ColumnName="qtrSummary_Id" />
+                <ScalarProperty Name="qtrNo" ColumnName="qtrNo" />
+                <ScalarProperty Name="vh" ColumnName="vh" />
+                <ScalarProperty Name="team" ColumnName="team" />
+                <ScalarProperty Name="firstDownNo" ColumnName="firstDownNo" />
+                <ScalarProperty Name="firstDownRush" ColumnName="firstDownRush" />
+                <ScalarProperty Name="firstDownPass" ColumnName="firstDownPass" />
+                <ScalarProperty Name="firstDownPen" ColumnName="firstDownPen" />
+                <ScalarProperty Name="penaltyNo" ColumnName="penaltyNo" />
+                <ScalarProperty Name="penaltyYds" ColumnName="penaltyYds" />
+                <ScalarProperty Name="thirdConv" ColumnName="thirdConv" />
+                <ScalarProperty Name="thirdAtt" ColumnName="thirdAtt" />
+                <ScalarProperty Name="fourthConv" ColumnName="fourthConv" />
+                <ScalarProperty Name="fourthAtt" ColumnName="fourthAtt" />
+                <ScalarProperty Name="fumblesNo" ColumnName="fumblesNo" />
+                <ScalarProperty Name="fumblesLost" ColumnName="fumblesLost" />
+                <ScalarProperty Name="miscYds" ColumnName="miscYds" />
+                <ScalarProperty Name="timeOfPoss" ColumnName="timeOfPoss" />
+                <ScalarProperty Name="onsideAtt" ColumnName="onsideAtt" />
+                <ScalarProperty Name="onsideMade" ColumnName="onsideMade" />
+                <ScalarProperty Name="pointsOffTurnovers" ColumnName="pointsOffTurnovers" />
+                <ScalarProperty Name="rushAtt" ColumnName="rushAtt" />
+                <ScalarProperty Name="rushYds" ColumnName="rushYds" />
+                <ScalarProperty Name="rushGain" ColumnName="rushGain" />
+                <ScalarProperty Name="rushLoss" ColumnName="rushLoss" />
+                <ScalarProperty Name="rushTd" ColumnName="rushTd" />
+                <ScalarProperty Name="rushLong" ColumnName="rushLong" />
+                <ScalarProperty Name="passComp" ColumnName="passComp" />
+                <ScalarProperty Name="passAtt" ColumnName="passAtt" />
+                <ScalarProperty Name="passInt" ColumnName="passInt" />
+                <ScalarProperty Name="passYds" ColumnName="passYds" />
+                <ScalarProperty Name="passTd" ColumnName="passTd" />
+                <ScalarProperty Name="passLong" ColumnName="passLong" />
+                <ScalarProperty Name="passSacks" ColumnName="passSacks" />
+                <ScalarProperty Name="passSackYds" ColumnName="passSackYds" />
+                <ScalarProperty Name="rcvNo" ColumnName="rcvNo" />
+                <ScalarProperty Name="rcvYds" ColumnName="rcvYds" />
+                <ScalarProperty Name="rcvTd" ColumnName="rcvTd" />
+                <ScalarProperty Name="rcvLong" ColumnName="rcvLong" />
+                <ScalarProperty Name="puntNo" ColumnName="puntNo" />
+                <ScalarProperty Name="puntYds" ColumnName="puntYds" />
+                <ScalarProperty Name="puntLong" ColumnName="puntLong" />
+                <ScalarProperty Name="puntBlkd" ColumnName="puntBlkd" />
+                <ScalarProperty Name="puntTb" ColumnName="puntTb" />
+                <ScalarProperty Name="puntFc" ColumnName="puntFc" />
+                <ScalarProperty Name="puntPlus50" ColumnName="puntPlus50" />
+                <ScalarProperty Name="puntInside20" ColumnName="puntInside20" />
+                <ScalarProperty Name="koNo" ColumnName="koNo" />
+                <ScalarProperty Name="koYds" ColumnName="koYds" />
+                <ScalarProperty Name="koOb" ColumnName="koOb" />
+                <ScalarProperty Name="koTb" ColumnName="koTb" />
+                <ScalarProperty Name="fgMade" ColumnName="fgMade" />
+                <ScalarProperty Name="fgAtt" ColumnName="fgAtt" />
+                <ScalarProperty Name="fgLong" ColumnName="fgLong" />
+                <ScalarProperty Name="fgBlkd" ColumnName="fgBlkd" />
+                <ScalarProperty Name="patKickAtt" ColumnName="patKickAtt" />
+                <ScalarProperty Name="patKickMade" ColumnName="patKickMade" />
+                <ScalarProperty Name="patPassAtt" ColumnName="patPassAtt" />
+                <ScalarProperty Name="patPassMade" ColumnName="patPassMade" />
+                <ScalarProperty Name="patRushAtt" ColumnName="patRushAtt" />
+                <ScalarProperty Name="patRushMade" ColumnName="patRushMade" />
+                <ScalarProperty Name="krNo" ColumnName="krNo" />
+                <ScalarProperty Name="krYds" ColumnName="krYds" />
+                <ScalarProperty Name="krTd" ColumnName="krTd" />
+                <ScalarProperty Name="krLong" ColumnName="krLong" />
+                <ScalarProperty Name="prNo" ColumnName="prNo" />
+                <ScalarProperty Name="prYds" ColumnName="prYds" />
+                <ScalarProperty Name="prTd" ColumnName="prTd" />
+                <ScalarProperty Name="prLong" ColumnName="prLong" />
+                <ScalarProperty Name="irNo" ColumnName="irNo" />
+                <ScalarProperty Name="irYds" ColumnName="irYds" />
+                <ScalarProperty Name="irTd" ColumnName="irTd" />
+                <ScalarProperty Name="irLong" ColumnName="irLong" />
+                <ScalarProperty Name="defTackUA" ColumnName="defTackUA" />
+                <ScalarProperty Name="defTackA" ColumnName="defTackA" />
+                <ScalarProperty Name="defTflUA" ColumnName="defTflUA" />
+                <ScalarProperty Name="defTflA" ColumnName="defTflA" />
+                <ScalarProperty Name="defTflYards" ColumnName="defTflYards" />
+                <ScalarProperty Name="defSacks" ColumnName="defSacks" />
+                <ScalarProperty Name="defSackYds" ColumnName="defSackYds" />
+                <ScalarProperty Name="defBrup" ColumnName="defBrup" />
+                <ScalarProperty Name="defQbh" ColumnName="defQbh" />
+                <ScalarProperty Name="defInts" ColumnName="defInts" />
+                <ScalarProperty Name="defIntYds" ColumnName="defIntYds" />
+                <ScalarProperty Name="defFf" ColumnName="defFf" />
+                <ScalarProperty Name="defFr" ColumnName="defFr" />
+                <ScalarProperty Name="defFrYards" ColumnName="defFrYards" />
+                <ScalarProperty Name="scoringTD" ColumnName="scoringTD" />
+                <ScalarProperty Name="scoringFG" ColumnName="scoringFG" />
+                <ScalarProperty Name="scoringPatKick" ColumnName="scoringPatKick" />
+                <ScalarProperty Name="scoringPatRush" ColumnName="scoringPatRush" />
+                <ScalarProperty Name="scoringPatRcv" ColumnName="scoringPatRcv" />
+                <ScalarProperty Name="scoringSaf" ColumnName="scoringSaf" />
+                <ScalarProperty Name="teamGame_Id" ColumnName="teamGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rcvs">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Rcv">
+              <MappingFragment StoreEntitySet="Rcv">
+                <ScalarProperty Name="rcv_Id" ColumnName="rcv_Id" />
+                <ScalarProperty Name="no_" ColumnName="no_" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rushes">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Rush">
+              <MappingFragment StoreEntitySet="Rush">
+                <ScalarProperty Name="rush_Id" ColumnName="rush_Id" />
+                <ScalarProperty Name="att" ColumnName="att" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="gain" ColumnName="gain" />
+                <ScalarProperty Name="loss" ColumnName="loss" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scores">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Score">
+              <MappingFragment StoreEntitySet="Scores">
+                <ScalarProperty Name="scores_Id" ColumnName="scores_Id" />
+                <ScalarProperty Name="vh" ColumnName="vh" />
+                <ScalarProperty Name="team" ColumnName="team" />
+                <ScalarProperty Name="qtr" ColumnName="qtr" />
+                <ScalarProperty Name="clock" ColumnName="clock" />
+                <ScalarProperty Name="type_" ColumnName="type_" />
+                <ScalarProperty Name="how" ColumnName="how" />
+                <ScalarProperty Name="yds" ColumnName="yds" />
+                <ScalarProperty Name="scorer" ColumnName="scorer" />
+                <ScalarProperty Name="passer" ColumnName="passer" />
+                <ScalarProperty Name="patBy" ColumnName="patBy" />
+                <ScalarProperty Name="patType" ColumnName="patType" />
+                <ScalarProperty Name="patRes" ColumnName="patRes" />
+                <ScalarProperty Name="plays" ColumnName="plays" />
+                <ScalarProperty Name="drive" ColumnName="drive" />
+                <ScalarProperty Name="top_" ColumnName="top_" />
+                <ScalarProperty Name="vScore" ColumnName="vScore" />
+                <ScalarProperty Name="hScore" ColumnName="hScore" />
+                <ScalarProperty Name="driveIndex" ColumnName="driveIndex" />
+                <ScalarProperty Name="game_Id" ColumnName="game_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scorings">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Scoring">
+              <MappingFragment StoreEntitySet="Scoring">
+                <ScalarProperty Name="scoring_Id" ColumnName="scoring_Id" />
+                <ScalarProperty Name="td" ColumnName="td" />
+                <ScalarProperty Name="fg" ColumnName="fg" />
+                <ScalarProperty Name="kick" ColumnName="kick" />
+                <ScalarProperty Name="rush" ColumnName="rush" />
+                <ScalarProperty Name="rcv" ColumnName="rcv" />
+                <ScalarProperty Name="saf" ColumnName="saf" />
+                <ScalarProperty Name="playerGame_Id" ColumnName="playerGame_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="UAAthleticsModel.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="abbreviation" ColumnName="abbreviation" />
+                <ScalarProperty Name="team_Id" ColumnName="team_Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeamGames">
+            <EntityTypeMapping TypeName="UAAthleticsModel.TeamGame">
+              <MappingFragment StoreEntitySet="TeamGame">
+                <ScalarProperty Name="defBlkd" ColumnName="defBlkd" />
+                <ScalarProperty Name="teamGame_Id" ColumnName="teamGame_Id" />
+                <ScalarProperty Name="teamName" ColumnName="teamName" />
+                <ScalarProperty Name="vh" ColumnName="vh" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="record" ColumnName="record" />
+                <ScalarProperty Name="confRecord" ColumnName="confRecord" />
+                <ScalarProperty Name="abb" ColumnName="abb" />
+                <ScalarProperty Name="rank_" ColumnName="rank_" />
+                <ScalarProperty Name="totOffPlays" ColumnName="totOffPlays" />
+                <ScalarProperty Name="totOffYards" ColumnName="totOffYards" />
+                <ScalarProperty Name="totOffAvg" ColumnName="totOffAvg" />
+                <ScalarProperty Name="firstDownNo" ColumnName="firstDownNo" />
+                <ScalarProperty Name="firstDownRush" ColumnName="firstDownRush" />
+                <ScalarProperty Name="firstDownPass" ColumnName="firstDownPass" />
+                <ScalarProperty Name="firstDownPen" ColumnName="firstDownPen" />
+                <ScalarProperty Name="penaltyNo" ColumnName="penaltyNo" />
+                <ScalarProperty Name="penaltyYds" ColumnName="penaltyYds" />
+                <ScalarProperty Name="thirdConv" ColumnName="thirdConv" />
+                <ScalarProperty Name="thirdAtt" ColumnName="thirdAtt" />
+                <ScalarProperty Name="fourthConv" ColumnName="fourthConv" />
+                <ScalarProperty Name="fourthAtt" ColumnName="fourthAtt" />
+                <ScalarProperty Name="fumbles" ColumnName="fumbles" />
+                <ScalarProperty Name="fumblesLost" ColumnName="fumblesLost" />
+                <ScalarProperty Name="miscYds" ColumnName="miscYds" />
+                <ScalarProperty Name="timeOfPoss" ColumnName="timeOfPoss" />
+                <ScalarProperty Name="onsideAtt" ColumnName="onsideAtt" />
+                <ScalarProperty Name="onsideMade" ColumnName="onsideMade" />
+                <ScalarProperty Name="pointsOffTurnovers" ColumnName="pointsOffTurnovers" />
+                <ScalarProperty Name="rzAtt" ColumnName="rzAtt" />
+                <ScalarProperty Name="rzScores" ColumnName="rzScores" />
+                <ScalarProperty Name="rzPoints" ColumnName="rzPoints" />
+                <ScalarProperty Name="rzTdRush" ColumnName="rzTdRush" />
+                <ScalarProperty Name="rzTdPass" ColumnName="rzTdPass" />
+                <ScalarProperty Name="rzFgMade" ColumnName="rzFgMade" />
+                <ScalarProperty Name="rzEndFga" ColumnName="rzEndFga" />
+                <ScalarProperty Name="rzEndDowns" ColumnName="rzEndDowns" />
+                <ScalarProperty Name="rzEndInt" ColumnName="rzEndInt" />
+                <ScalarProperty Name="rzEndFumb" ColumnName="rzEndFumb" />
+                <ScalarProperty Name="rzEndHalf" ColumnName="rzEndHalf" />
+                <ScalarProperty Name="rzEndGame" ColumnName="rzEndGame" />
+                <ScalarProperty Name="rushAtt" ColumnName="rushAtt" />
+                <ScalarProperty Name="rushYds" ColumnName="rushYds" />
+                <ScalarProperty Name="rushGain" ColumnName="rushGain" />
+                <ScalarProperty Name="rushLoss" ColumnName="rushLoss" />
+                <ScalarProperty Name="rushTd" ColumnName="rushTd" />
+                <ScalarProperty Name="rushLong" ColumnName="rushLong" />
+                <ScalarProperty Name="passComp" ColumnName="passComp" />
+                <ScalarProperty Name="passAtt" ColumnName="passAtt" />
+                <ScalarProperty Name="passInt" ColumnName="passInt" />
+                <ScalarProperty Name="passYds" ColumnName="passYds" />
+                <ScalarProperty Name="passTd" ColumnName="passTd" />
+                <ScalarProperty Name="passLong" ColumnName="passLong" />
+                <ScalarProperty Name="passSacks" ColumnName="passSacks" />
+                <ScalarProperty Name="passSackYds" ColumnName="passSackYds" />
+                <ScalarProperty Name="rcvNo" ColumnName="rcvNo" />
+                <ScalarProperty Name="rcvYds" ColumnName="rcvYds" />
+                <ScalarProperty Name="rcvTd" ColumnName="rcvTd" />
+                <ScalarProperty Name="rcvLong" ColumnName="rcvLong" />
+                <ScalarProperty Name="puntNo" ColumnName="puntNo" />
+                <ScalarProperty Name="puntYds" ColumnName="puntYds" />
+                <ScalarProperty Name="puntLong" ColumnName="puntLong" />
+                <ScalarProperty Name="puntBlkd" ColumnName="puntBlkd" />
+                <ScalarProperty Name="puntTb" ColumnName="puntTb" />
+                <ScalarProperty Name="puntFc" ColumnName="puntFc" />
+                <ScalarProperty Name="puntPlus50" ColumnName="puntPlus50" />
+                <ScalarProperty Name="puntInside20" ColumnName="puntInside20" />
+                <ScalarProperty Name="koNo" ColumnName="koNo" />
+                <ScalarProperty Name="koYds" ColumnName="koYds" />
+                <ScalarProperty Name="koOb" ColumnName="koOb" />
+                <ScalarProperty Name="koTb" ColumnName="koTb" />
+                <ScalarProperty Name="fgAtt" ColumnName="fgAtt" />
+                <ScalarProperty Name="fgLong" ColumnName="fgLong" />
+                <ScalarProperty Name="fgBlkd" ColumnName="fgBlkd" />
+                <ScalarProperty Name="fgMade" ColumnName="fgMade" />
+                <ScalarProperty Name="patAtt" ColumnName="patAtt" />
+                <ScalarProperty Name="patMade" ColumnName="patMade" />
+                <ScalarProperty Name="patKickAtt" ColumnName="patKickAtt" />
+                <ScalarProperty Name="patKickMade" ColumnName="patKickMade" />
+                <ScalarProperty Name="patPassAtt" ColumnName="patPassAtt" />
+                <ScalarProperty Name="patPassMade" ColumnName="patPassMade" />
+                <ScalarProperty Name="patRushAtt" ColumnName="patRushAtt" />
+                <ScalarProperty Name="patRushMade" ColumnName="patRushMade" />
+                <ScalarProperty Name="krTd" ColumnName="krTd" />
+                <ScalarProperty Name="krYds" ColumnName="krYds" />
+                <ScalarProperty Name="krNo" ColumnName="krNo" />
+                <ScalarProperty Name="krLong" ColumnName="krLong" />
+                <ScalarProperty Name="prTd" ColumnName="prTd" />
+                <ScalarProperty Name="prYds" ColumnName="prYds" />
+                <ScalarProperty Name="prNo" ColumnName="prNo" />
+                <ScalarProperty Name="prLong" ColumnName="prLong" />
+                <ScalarProperty Name="irTd" ColumnName="irTd" />
+                <ScalarProperty Name="irYds" ColumnName="irYds" />
+                <ScalarProperty Name="irNo" ColumnName="irNo" />
+                <ScalarProperty Name="irLong" ColumnName="irLong" />
+                <ScalarProperty Name="defTackUA" ColumnName="defTackUA" />
+                <ScalarProperty Name="defTackA" ColumnName="defTackA" />
+                <ScalarProperty Name="defTflUA" ColumnName="defTflUA" />
+                <ScalarProperty Name="defTflA" ColumnName="defTflA" />
+                <ScalarProperty Name="defTflYards" ColumnName="defTflYards" />
+                <ScalarProperty Name="defSacks" ColumnName="defSacks" />
+                <ScalarProperty Name="defSackYds" ColumnName="defSackYds" />
+                <ScalarProperty Name="defBrup" ColumnName="defBrup" />
+                <ScalarProperty Name="defQbh" ColumnName="defQbh" />
+                <ScalarProperty Name="defInts" ColumnName="defInts" />
+                <ScalarProperty Name="defIntYds" ColumnName="defIntYds" />
+                <ScalarProperty Name="defFF" ColumnName="defFF" />
+                <ScalarProperty Name="defFR" ColumnName="defFR" />
+                <ScalarProperty Name="defFRYards" ColumnName="defFRYards" />
+                <ScalarProperty Name="scoringTD" ColumnName="scoringTD" />
+                <ScalarProperty Name="scoringFG" ColumnName="scoringFG" />
+                <ScalarProperty Name="scoringPatKick" ColumnName="scoringPatKick" />
+                <ScalarProperty Name="scoringPatRush" ColumnName="scoringPatRush" />
+                <ScalarProperty Name="scoringPatRcv" ColumnName="scoringPatRcv" />
+                <ScalarProperty Name="scoringSaf" ColumnName="scoringSaf" />
+                <ScalarProperty Name="team_Id" ColumnName="team_Id" />
+                <ScalarProperty Name="game_Id" ColumnName="game_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

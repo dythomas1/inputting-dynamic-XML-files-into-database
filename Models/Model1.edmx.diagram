@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="539756d5f3714a5988940dd4045d758b" Name="Diagram1" ZoomLevel="139">
+        <EntityTypeShape EntityType="UAAthleticsModel.Defense" Width="1.5" PointX="8.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Fg" Width="1.5" PointX="8.25" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Fumble" Width="1.5" PointX="8.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Game" Width="1.5" PointX="0.75" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Ir" Width="1.5" PointX="8.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Ko" Width="1.5" PointX="8.25" PointY="58.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Kr" Width="1.5" PointX="8.25" PointY="61.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Lineprd" Width="1.5" PointX="13.5" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Linescore" Width="1.5" PointX="11.25" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.LongPlay" Width="1.5" PointX="3" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Official" Width="1.5" PointX="3" PointY="43.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Pass" Width="1.5" PointX="8.25" PointY="64.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Pat" Width="1.5" PointX="8.25" PointY="68.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Player" Width="1.5" PointX="3.75" PointY="46.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.PlayerGame" Width="1.5" PointX="6" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Pr" Width="1.5" PointX="8.25" PointY="72" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Punt" Width="1.5" PointX="8.25" PointY="75.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.QtrSummary" Width="1.5" PointX="11.25" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Rcv" Width="1.5" PointX="8.25" PointY="79" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Rush" Width="1.5" PointX="8.25" PointY="82.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Score" Width="1.5" PointX="3" PointY="90.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Scoring" Width="1.5" PointX="8.25" PointY="85.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.Team" Width="1.5" PointX="6.75" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UAAthleticsModel.TeamGame" Width="1.5" PointX="9" PointY="33.375" IsExpanded="true" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Defense__playerG__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Fg__playerGame_I__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Fumbles__playerG__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__LongPlay__Game_I__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Official__game_I__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__PlayerGam__game___173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Scores__game_Id__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__TeamGame__game_I__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Ir__playerGame_I__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Ko__playerGame_I__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Kr__playerGame_I__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Lineprd__linesco__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Linescore__teamG__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Pass__playerGame__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Pat__playerGame___3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__PlayerGam__playe__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Pr__playerGame_I__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Punt__playerGame__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Rcv__playerGame___2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Rush__playerGame__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__Scoring__playerG__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__QtrSummar__teamG__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="UAAthleticsModel.FK__TeamGame__team_I__1CF15040" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
